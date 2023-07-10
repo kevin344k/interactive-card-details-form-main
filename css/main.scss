@@ -1,0 +1,319 @@
+//## Colors
+
+//### Primary
+
+//Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+$Red_input_errors: hsl(0, 100%, 66%);
+
+//### Neutral
+
+$White: hsl(0, 0%, 100%);
+$Light_grayish_violet :hsl(270, 3%, 87%);
+$Dark_grayish_violet: hsl(279, 6%, 55%);
+$Very_dark_violet: hsl(278, 68%, 11%);
+
+//## Typography
+
+$font_size_paragraph: 1.5rem;
+$font-family_grotesk: 'Space Grotesk', sans-serif;
+
+@mixin backImgPosition($w, $h, $back_img ) {
+    width: $w;
+    height: $h;
+    background-image: url($back_img );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: $White;
+
+    .section_cards {
+        @include backImgPosition(100%, 240px, "../images/bg-main-mobile.png");
+        min-width: 375px;
+        max-width: 375px;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        margin: auto;
+        position: relative;
+
+        .img_card_back {
+
+
+            @include backImgPosition(310px, 160px, "../images/bg-card-back.png");
+            background-size: cover;
+            margin: 30px 15px 40px 20px;
+            position: relative;
+            border-radius: 10px;
+
+            .span_text_back_card {
+                position: absolute;
+                left: 230px;
+                top: 70px;
+                font-family: $font-family_grotesk;
+                font-size: 1.4rem;
+                color: $White;
+                letter-spacing: 2px;
+                font-weight: 500;
+            }
+
+
+        }
+
+        .img_card_front {
+            padding: 20px;
+            display: block;
+            @include backImgPosition(null, null, "../images/bg-card-front.png");
+            position: absolute;
+            background-size: cover;
+            top: 125px;
+            left: 20px;
+            color: $White;
+            font-family: $font-family_grotesk;
+            border-radius: 10px;
+            box-shadow: 13px 31px 213px -44px rgba(0, 0, 0, 0.54);
+            font-size: 1.1rem;
+            font-family: $font-family_grotesk;
+
+            .info_card_conainer {
+                margin: 0;
+                width: 270px;
+                position: relative;
+
+            }
+
+            .circle_card {
+                display: flex;
+                align-items: center;
+                margin-bottom: 40px;
+
+                span:nth-child(1) {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 100%;
+                    background-color: $White;
+                    display: inline-block;
+                }
+
+                span:nth-child(2) {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    background-color: none;
+                    border: 1px solid $White;
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+            }
+
+            .span_card_number {
+                font-size: $font_size_paragraph;
+                letter-spacing: 2.5px;
+                display: inline-block;
+                margin-bottom: 25px;
+            }
+
+            .text_card_foot {
+                display: flex;
+                justify-content: space-between;
+                letter-spacing: 2px;
+            }
+
+
+        }
+
+    }
+
+    .section_inputs {
+        background-color: $White;
+        width: 100%;
+        min-width: 375px;
+        max-width: 375px;
+        padding: 80px 30px 30px 30px;
+        margin: auto;
+
+        form {
+            font-family: $font-family_grotesk;
+
+            label {
+                font-size: $font_size_paragraph;
+                font-weight: 500;
+                color: $Very_dark_violet;
+                letter-spacing: 1px;
+
+                input {
+                    width: 100%;
+                    font-family: $font-family_grotesk;
+                    font-size: $font_size_paragraph;
+                    margin-top: 5px;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    border: 1px solid $Light_grayish_violet;
+                    border-radius: 5px;
+                    outline: none;
+
+                    &::placeholder {
+                        color: $Light_grayish_violet;
+                    }
+
+                    &:hover {
+                        border-radius: 5px;
+                        border: 1px solid hsl(278, 94%, 30%);
+
+
+                    }
+
+                }
+
+            }
+
+            .div_date_card {
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+
+                label:nth-child(1) {
+                    width: 60%;
+
+                    input {
+                        width: 70px;
+                    }
+                }
+
+                label:nth-child(2) {
+                    width: 50%;
+                }
+            }
+
+            .butConfirm {
+                width: 100%;
+                background-color: $Very_dark_violet;
+                padding: 15px;
+                color: $White;
+                letter-spacing: 0.5px;
+                border-style: none;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .sendForm {
+        @extend .section_inputs;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-family_grotesk;
+        transition: .3s;
+
+        .ico {
+            @include backImgPosition(60px, 60px, "../images/icon-complete.svg");
+            margin-bottom: 40px;
+        }
+
+        .thank_you {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: $font_size_paragraph;
+            color: $Dark_grayish_violet;
+            margin-bottom: 20px;
+        }
+
+        .butContinue {
+            width: 100%;
+            background-color: $Very_dark_violet;
+            padding: 15px;
+            color: $White;
+            letter-spacing: 0.5px;
+            border-style: none;
+            border-radius: 5px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: $White;
+
+        }
+    }
+}
+
+
+
+//styles for inputs validation
+
+.section_inputs {
+    .error-input {
+        margin-bottom: 0;
+        border: 1px solid $Red_input_errors;
+
+    }
+
+    .span_text_error {
+        display: inline-block;
+        color: $Red_input_errors;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        transition: .3s ease-in-out;
+        ;
+    }
+
+}
+
+
+@media(min-width:1440px) {
+    main {
+        display: flex;
+
+
+        .section_cards {
+
+
+            display: block;
+          
+      
+
+            @include backImgPosition(100px, 100vh, "../images/bg-main-desktop.png");
+background-size: cover;
+margin: 0;
+transition: .3s;
+            .img_card_back {
+                margin: 0;
+                top: 350px;
+                left: 250px;
+
+            }
+
+            .img_card_front {
+                margin: 0;
+                top: 160px;
+                left: 150px;
+            }
+
+        }
+
+        .section_inputs {
+            margin-left: 300px;
+            transition: .3s;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <main>
+        <section class="section_cards">
+            <div class="img_card_back">
+                <span class="span_text_back_card">000</span>
+            </div>
+            <div class="img_card_front">
+                <div class="info_card_conainer">
+                    <div class="circle_card">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="span_card_number">0000 0000 0000 0000</span>
+                    <div class="text_card_foot">
+                        <span class="text_name_card">JANE APPLESEED</span>
+                        <div class="text_date_exp_card"><span class="span-month">00</span>/<span class="span-year">00</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section_inputs">
+            <form action="#">
+                <label for="holder_name"> CARDHOLDER NAME<br>
+                    <input id="holder_name" maxlength="16" class="" type="text" placeholder="e.g Jane Appleseed">
+                    <span id="span-cardName-err" class=""></span>
+                </label> <br>
+                <label for="card_number"> CARD NUMBER<br>
+                    <input type="text" maxlength="16" id="card_number" class="" placeholder="1234 5678 9123 0000">
+                    <span id="span-cardNumber-err" class="span_text_error"></span>
+                </label><br>
+                <div class="div_date_card">
+                    <label for="exp_date_card"> EXP. DATE (MM/YY) <br>
+                        <input id="exp_month_card" type="text" maxlength="2" placeholder="MM" class="">
+                        <input id="exp_year_card" type="text" maxlength="2" placeholder="YY" class="">
+                        <span id="span-exp-date-err"  class=""></span>
+                    </label>
+                    <label for="card_cvc">CVC <br>
+                        <input type="text" id="card_cvc" placeholder="e.g 123" maxlength="3" >
+                        <span id="span-cvc-err" class=""></span>
+                    </label>
+                </div>
+                <button id="butSend" type="submit" class="butConfirm"> Confirm</button>
+            </form>
+        </section>
+        <section class="sendForm">
+            <span class="ico"></span>
+            <span class="thank_you">THANK YOU!</span>
+            <p>we´ve added your card details</p>
+            <button class="butContinue"><a href="/">Continue</a></button>
+        </section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
